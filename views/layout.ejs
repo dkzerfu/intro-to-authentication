@@ -7,8 +7,22 @@
   <title>Intro to Authentication</title>
 </head>
 <body>
-  <h1>Intro to Authentication</h1>
-  <%- body %> 
   
+  <nav>
+    <% if (user) { %>
+      <a href="/user/logout">logout</a>
+
+    <% }else{ %>
+      <a href="/user/new">Sign Up</a>
+      <a href="/user/login">Login</a>
+      <% } %> 
+    </nav>
+    <h1>Intro to Authentication</h1>
+
+    <% if (user) { %>
+      <h4>Hello, <%= user.id %> </h4>
+    <% } %>
+
+  <%- body %> 
 </body>
 </html>
